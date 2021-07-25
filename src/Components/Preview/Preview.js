@@ -1,20 +1,12 @@
 import React from 'react'
+import EducationalBackground from './Educational-Background'
 import GeneralInformation from './General-Information'
 
-export default function Preview({
-    firstName, lastName, profession, address, contactNumber, email, description
-}) {
+export default function Preview({ details }) {
     return(
         <div>
-            <GeneralInformation
-                firstName={firstName}
-                lastName={lastName}
-                profession={profession}
-                address={address}
-                contactNumber={contactNumber}
-                email={email}
-                description={description}
-            />
+            <GeneralInformation genInfo={details.generalInformation} />
+            <EducationalBackground educationalBackground={details.educationalBackground} />
         </div>
-    )
+    );
 }

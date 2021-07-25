@@ -17,7 +17,10 @@ export default class Main extends Component {
                 description: '',
             },
             educationalBackground: {
-
+                course: '',
+                school: '',
+                from: '',
+                to: '',
             },
             practicalExperience: {
 
@@ -25,6 +28,8 @@ export default class Main extends Component {
         };
         
         this.getGeneralInfo = this.getGeneralInfo.bind(this);
+        this.getEducationBackground = this.getEducationBackground.bind(this);
+        this.addEducation = this.addEducation.bind(this);
     };
     
     getGeneralInfo(e) {
@@ -37,28 +42,34 @@ export default class Main extends Component {
         });
     }
 
-    render() {
-        const { generalInformation } = this.state;
+    getEducationBackground(e) {
+        const { id, value } = e.target;
+        this.setState({
+            educationalBackground: {
+                ...this.state.educationalBackground,
+                [id]:value,
+            }
+        });
+    }
 
+    //  TO DO
+    //     addEducation(e) {
+    //     e.preventDefault();
+    //     this.setState({
+
+    //     });
+    // }
+    
+
+    render() {
         return(
             <section>
                 <Form 
-                    getFirstName={this.getGeneralInfo}
-                    getLastName={this.getGeneralInfo}
-                    getProfession={this.getGeneralInfo}
-                    getAddress={this.getGeneralInfo}
-                    getContactNumber={this.getGeneralInfo}
-                    getEmail={this.getGeneralInfo}
-                    getDescription={this.getGeneralInfo}
+                    getGenInfo={this.getGeneralInfo}
+                    getEducationalBackground={this.getEducationBackground}
                 />
                 <Preview
-                    firstName={generalInformation.firstName}
-                    lastName={generalInformation.lastName}
-                    profession={generalInformation.profession}
-                    address={generalInformation.address}
-                    contactNumber={generalInformation.contactNumber}
-                    email={generalInformation.email}
-                    description={generalInformation.description}
+                    details={this.state}
                 />
             </section>
         );
