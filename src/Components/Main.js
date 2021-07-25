@@ -14,7 +14,7 @@ export default class Main extends Component {
                 address: '',
                 contactNumber: '',
                 email: '',
-                descrption: '',
+                description: '',
             },
             educationalBackground: {
 
@@ -24,110 +24,15 @@ export default class Main extends Component {
             },
         };
         
-        this.getFirstName = this.getFirstName.bind(this);
-        this.getLastName = this.getLastName.bind(this);
-        this.getProfession = this.getProfession.bind(this);
-        this.getAddress = this.getAddress.bind(this);
-        this.getContactNumber = this.getContactNumber.bind(this);
-        this.getEmail = this.getEmail.bind(this);
-        this.getDescription = this.getDescription.bind(this);
+        this.getGeneralInfo = this.getGeneralInfo.bind(this);
     };
-
-    getFirstName(e) {
-        this.setState({
-            generalInformation:{
-                firstName: e.target.value,
-                lastName: this.state.generalInformation.lastName,
-                profession: this.state.generalInformation.profession,
-                address: this.state.generalInformation.address,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: this.state.generalInformation.email,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-        console.log(e.target.id);
-    }
-
-    getLastName(e) {
+    
+    getGeneralInfo(e) {
+        const { id, value } = e.target;
         this.setState({
             generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: e.target.value,
-                profession: this.state.generalInformation.profession,
-                address: this.state.generalInformation.address,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: this.state.generalInformation.email,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-    } 
-
-    getProfession(e) {
-        this.setState({
-            generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: this.state.generalInformation.lastName,
-                profession: e.target.value,
-                address: this.state.generalInformation.address,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: this.state.generalInformation.email,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-    }
-
-    getAddress(e) {
-        this.setState({
-            generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: this.state.generalInformation.lastName,
-                profession: this.state.generalInformation.profession,
-                address: e.target.value,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: this.state.generalInformation.email,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-    } 
-
-    getContactNumber(e) {
-        this.setState({
-            generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: this.state.generalInformation.lastName,
-                profession: this.state.generalInformation.profession,
-                address: this.state.generalInformation.address,
-                contactNumber: e.target.value,
-                email: this.state.generalInformation.email,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-    } 
-
-    getEmail(e) {
-        this.setState({
-            generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: this.state.generalInformation.lastName,
-                profession: this.state.generalInformation.profession,
-                address: this.state.generalInformation.address,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: e.target.value,
-                description: this.state.generalInformation.descrption,
-            }
-        });
-    } 
-
-    getDescription(e) {
-        this.setState({
-            generalInformation: {
-                firstName: this.state.generalInformation.firstName,
-                lastName: this.state.generalInformation.lastName,
-                profession: this.state.generalInformation.profession,
-                address: this.state.generalInformation.address,
-                contactNumber: this.state.generalInformation.contactNumber,
-                email: this.state.generalInformation.email,
-                descrption: e.target.value
+                ...this.state.generalInformation,
+                [id]: value,
             }
         });
     }
@@ -138,13 +43,13 @@ export default class Main extends Component {
         return(
             <section>
                 <Form 
-                    getFirstName={this.getFirstName}
-                    getLastName={this.getLastName}
-                    getProfession={this.getProfession}
-                    getAddress={this.getAddress}
-                    getContactNumber={this.getContactNumber}
-                    getEmail={this.getEmail}
-                    getDescription={this.getDescription}
+                    getFirstName={this.getGeneralInfo}
+                    getLastName={this.getGeneralInfo}
+                    getProfession={this.getGeneralInfo}
+                    getAddress={this.getGeneralInfo}
+                    getContactNumber={this.getGeneralInfo}
+                    getEmail={this.getGeneralInfo}
+                    getDescription={this.getGeneralInfo}
                 />
                 <Preview
                     firstName={generalInformation.firstName}
@@ -153,7 +58,7 @@ export default class Main extends Component {
                     address={generalInformation.address}
                     contactNumber={generalInformation.contactNumber}
                     email={generalInformation.email}
-                    description={generalInformation.descrption}
+                    description={generalInformation.description}
                 />
             </section>
         );
