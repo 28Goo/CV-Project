@@ -34,8 +34,6 @@ export default class Main extends Component {
         };
         
         this.getGeneralInfo = this.getGeneralInfo.bind(this);
-        this.getEducationBackground = this.getEducationBackground.bind(this);
-        this.addEducation = this.addEducation.bind(this);
     };
     
     getGeneralInfo(e) {
@@ -48,33 +46,33 @@ export default class Main extends Component {
         });
     }
 
-    getEducationBackground(e) {
-        const { value } = e.target;
-        this.setState({
-            educationalBackground: {
-                ...this.state.educationalBackground,
-                ...this.state.educationalBackground.map((item) => {
-                    if (item.education.id === e.target.parentElement.dataset.key)
-                    return();
-                }),
-                [e.target.id]:value,
-            }
-        });
-        console.log(this.state.educationalBackground);
-    }
+    // getEducationBackground(e) {
+    //     const { value } = e.target;
+    //     this.setState({
+    //         educationalBackground: {
+    //             ...this.state.educationalBackground,
+    //             ...this.state.educationalBackground.map((item) => {
+    //                 if (item.education.id === e.target.parentElement.dataset.key)
+    //                 return();
+    //             }),
+    //             [e.target.id]:value,
+    //         }
+    //     });
+    //     console.log(this.state.educationalBackground);
+    // }
 
-    removeEducation(e) {
-        this.setState({
+    // removeEducation(e) {
+    //     this.setState({
 
-        });
-    }
+    //     });
+    // }
 
-    addEducation(e) {
-        e.preventDefault();
-        this.setState({
+    // addEducation(e) {
+    //     e.preventDefault();
+    //     this.setState({
 
-        });
-    }
+    //     });
+    // }
     
 
     render() {
@@ -85,7 +83,6 @@ export default class Main extends Component {
                     getEducationalBackground={this.getEducationBackground}
                     removeEducation={this.removeEducation}
                     addEducation={this.addEducation}
-                    key={}
                 />
                 <Preview
                     details={this.state}
