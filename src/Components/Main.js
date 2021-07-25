@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import uniqid from 'uniqid';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
 
@@ -16,15 +17,20 @@ export default class Main extends Component {
                 email: '',
                 description: '',
             },
-            educationalBackground: {
-                course: '',
-                school: '',
-                from: '',
-                to: '',
-            },
-            practicalExperience: {
+            educationalBackground: [{
+                education: {
+                    id: uniqid(),
+                    course: '',
+                    school: '',
+                    from: '',
+                    to: '',
+                }
+            }],
+            practicalExperience: [{
+                experience: {
 
-            },
+                }
+            }],
         };
         
         this.getGeneralInfo = this.getGeneralInfo.bind(this);
@@ -43,22 +49,32 @@ export default class Main extends Component {
     }
 
     getEducationBackground(e) {
-        const { id, value } = e.target;
+        const { value } = e.target;
         this.setState({
             educationalBackground: {
                 ...this.state.educationalBackground,
-                [id]:value,
+                ...this.state.educationalBackground.map((item) => {
+                    if (item.education.id === e.target.parentElement.dataset.key)
+                    return();
+                }),
+                [e.target.id]:value,
             }
+        });
+        console.log(this.state.educationalBackground);
+    }
+
+    removeEducation(e) {
+        this.setState({
+
         });
     }
 
-    //  TO DO
-    //     addEducation(e) {
-    //     e.preventDefault();
-    //     this.setState({
+    addEducation(e) {
+        e.preventDefault();
+        this.setState({
 
-    //     });
-    // }
+        });
+    }
     
 
     render() {
@@ -67,6 +83,9 @@ export default class Main extends Component {
                 <Form 
                     getGenInfo={this.getGeneralInfo}
                     getEducationalBackground={this.getEducationBackground}
+                    removeEducation={this.removeEducation}
+                    addEducation={this.addEducation}
+                    key={}
                 />
                 <Preview
                     details={this.state}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function EducationalBackgroundForm({ getEducationalBackground, addEducation, removeEducation }) {
+export default function EducationalBackgroundForm({ getEducationalBackground, addEducation, removeEducation, key }) {
     return(
         <section>
-            <form className='educationalBackgroundForm'>
+            <form className='educationalBackgroundForm' key={key} data-key={key}>
                 <label htmlFor='course'>Course: </label>
                 <input type='text' id='course' onChange={getEducationalBackground}/>
 
