@@ -18,22 +18,18 @@ export default class Main extends Component {
                 description: '',
             },
             educationalBackground: [{
-                education: {
                     id: uniqid(),
                     course: '',
                     school: '',
                     from: '',
                     to: '',
-                }
             }],
             practicalExperience: [{
-                experience: {
-
-                }
             }],
         };
         
         this.getGeneralInfo = this.getGeneralInfo.bind(this);
+        this.getEducationBackground = this.getEducationBackground.bind(this);
     };
     
     getGeneralInfo(e) {
@@ -44,35 +40,35 @@ export default class Main extends Component {
                 [id]: value,
             }
         });
+        console.log(this.state);
     }
 
-    // getEducationBackground(e) {
-    //     const { value } = e.target;
-    //     this.setState({
-    //         educationalBackground: {
-    //             ...this.state.educationalBackground,
-    //             ...this.state.educationalBackground.map((item) => {
-    //                 if (item.education.id === e.target.parentElement.dataset.key)
-    //                 return();
-    //             }),
-    //             [e.target.id]:value,
-    //         }
-    //     });
-    //     console.log(this.state.educationalBackground);
-    // }
+    getEducationBackground(e) {
+        const { value, dataset } = e.target;
+        this.setState({
+            educationalBackground: {
+                ...this.state.educationalBackground,
+                ...this.state.educationalBackground.filter(item => {
+                    item.id = 
+                })
+            }
+            
+        });
+        console.log(this.state.educationalBackground);
+    }
 
-    // removeEducation(e) {
-    //     this.setState({
+    removeEducation(e) {
+        this.setState({
 
-    //     });
-    // }
+        });
+    }
 
-    // addEducation(e) {
-    //     e.preventDefault();
-    //     this.setState({
+    addEducation(e) {
+        e.preventDefault();
+        this.setState({
 
-    //     });
-    // }
+        });
+    }
     
 
     render() {
