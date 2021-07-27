@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Header() {
     return(
-        <div className='header'>
+        <section className='header'>
            <h1 className='logo'>CV Creator</h1>
-        </div>
+        </section>
     )
 } 

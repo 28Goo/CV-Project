@@ -23,13 +23,15 @@ export default class Main extends Component {
                     school: '',
                     from: '',
                     to: '',
-            }],
+            },],
             practicalExperience: [{
             }],
         };
         
         this.getGeneralInfo = this.getGeneralInfo.bind(this);
         this.getEducationBackground = this.getEducationBackground.bind(this);
+        this.addEducation = this.addEducation.bind(this);
+        this.removeEducation = this.removeEducation.bind(this);
     };
     
     getGeneralInfo(e) {
@@ -44,41 +46,53 @@ export default class Main extends Component {
     }
 
     getEducationBackground(e) {
-        const { value, dataset } = e.target;
+        const { id, value } = e.target;
         this.setState({
-            educationalBackground: {
+            educationalBackground: [
                 ...this.state.educationalBackground,
-                ...this.state.educationalBackground.filter(item => {
-                    item.id = 
-                })
-            }
-            
+                {
+                    ...this.state.educationalBackground.map(info => {
+                        return(info[id] = value)
+                    })
+                }
+            ]
         });
-        console.log(this.state.educationalBackground);
-    }
-
-    removeEducation(e) {
-        this.setState({
-
-        });
+        console.log(this.state.educationalBackground[0]);
     }
 
     addEducation(e) {
-        e.preventDefault();
         this.setState({
-
+            educationalBackground: this.state.educationalBackground.concat([{
+                id: uniqid(),
+                course: '',
+                school: '',
+                from: '',
+                to: '',
+            }])
         });
     }
-    
+
+    removeEducation(e) {
+        if (this.state.educationalBackground.length === 1) return
+        const { key } = e.target.parentElement.dataset;
+        this.setState({
+            educationalBackground: [
+                ...this.state.educationalBackground.filter(info => {
+                        return info.id !== key;
+                })
+            ]
+        });
+    }
 
     render() {
         return(
-            <section>
+            <section className='main'>
                 <Form 
                     getGenInfo={this.getGeneralInfo}
                     getEducationalBackground={this.getEducationBackground}
-                    removeEducation={this.removeEducation}
                     addEducation={this.addEducation}
+                    removeEducation={this.removeEducation}
+                    education={this.state.educationalBackground}
                 />
                 <Preview
                     details={this.state}

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function GeneralInformation({ genInfo }) {
     return(
-    <section className='generalInformation'>
+    <div className='generalInformation'>
         <h1>{genInfo.firstName}</h1>
         <h1>{genInfo.lastName}</h1>
         <h1>{genInfo.profession}</h1>
@@ -10,6 +10,6 @@ export default function GeneralInformation({ genInfo }) {
         <h1>{genInfo.contactNumber}</h1>
         <h1>{genInfo.email}</h1>
         <h1>{genInfo.description}</h1>
-    </section>
+    </div>
     )
 }

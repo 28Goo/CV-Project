@@ -2,11 +2,11 @@ import React from 'react'
 import EducationalBackground from './Educational-Background'
 import GeneralInformation from './General-Information'
 
-export default function Preview({ details }) {
+export default function Preview({ details, key }) {
     return(
-        <div>
+        <section className='preview'>
             <GeneralInformation genInfo={details.generalInformation} />
-            <EducationalBackground educationalBackground={details.educationalBackground} />
-        </div>
+            <EducationalBackground educationalBackground={details.educationalBackground} key={key} />
+        </section>
     );
 }

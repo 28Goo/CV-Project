@@ -4,7 +4,7 @@ export default function GeneralInformationForm({
     getGenInfo
 }) {
     return(
-        <section>
+        <div className='generalForm'>
             <form className='generalInformationForm'>
                 <label htmlFor='firstName'>First Name: </label>
                 <input type='text' id='firstName' onChange={getGenInfo} />
@@ -27,6 +27,6 @@ export default function GeneralInformationForm({
                 <label htmlFor='description'>About Me: </label>
                 <input type='text' id='description' onChange={getGenInfo} />
             </form>
-        </section>
+        </div>
     );
 }

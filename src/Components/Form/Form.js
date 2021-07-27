@@ -2,16 +2,16 @@ import React from 'react';
 import EducationalBackgroundForm from './Educational-Background-Form';
 import GeneralInformationForm from './General-Information-Form';
 
-export default function Form({ getGenInfo, getEducationalBackground, removeEducation, addEducation, key }) {
+export default function Form({ getGenInfo, getEducationalBackground, removeEducation, addEducation, education }) {
         return(
-            <div className='form'>
+            <section className='forms'>
                 <GeneralInformationForm getGenInfo={getGenInfo} />
                 <EducationalBackgroundForm 
                 getEducationalBackground={getEducationalBackground}
-                removeEducation={removeEducation}
                 addEducation={addEducation}
-                key={key}
+                removeEducation={removeEducation}
+                education={education}
                 />
-            </div>
+            </section>
         )    
 };
