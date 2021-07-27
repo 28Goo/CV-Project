@@ -47,17 +47,17 @@ export default class Main extends Component {
 
     getEducationBackground(e) {
         const { id, value } = e.target;
+        const { index } = e.target.parentElement.dataset;
+
+        let newArray = this.state.educationalBackground;
+        newArray[index][id] = value;
+
         this.setState({
             educationalBackground: [
-                ...this.state.educationalBackground,
-                {
-                    ...this.state.educationalBackground.map(info => {
-                        return(info[id] = value)
-                    })
-                }
+                ...newArray
             ]
         });
-        console.log(this.state.educationalBackground[0]);
+        console.log(this.state.educationalBackground);
     }
 
     addEducation(e) {

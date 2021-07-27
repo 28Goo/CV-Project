@@ -4,9 +4,9 @@ export default function EducationalBackgroundForm({ getEducationalBackground, ad
     return(
         <div className='educationForms'>
             {
-                education.map(info => {
+                education.map((info, index) => {
                     return(
-                        <div key={info.id} data-key={info.id}>
+                        <div key={info.id} data-key={info.id} data-index={index}>
                             <label htmlFor='course'>Course: </label>
                             <input type='text' id='course' onChange={getEducationalBackground}/>
 
