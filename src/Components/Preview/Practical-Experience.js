@@ -6,12 +6,13 @@ export default function PracticalExperience ({ practicalExperience }) {
             {
                 practicalExperience.map(experience => {
                     return(
-                        <div className='practicalExperience' key={experience.id}>
-                            <h1>{experience.position}</h1>
-                            <h1>{experience.company}</h1>
-                            <h1>{experience.description}</h1>
-                            <h1>{experience.from}</h1>
-                            <h1>{experience.to}</h1>
+                        <div className='experiences' key={experience.id}>
+                            <h1 className='experienceTitle'>Experience</h1>
+                            <p className='position experiencePreview'>{experience.position}</p>
+                            <p className='company experiencePreview'>{experience.company}</p>
+                            <p className='description experiencePreview'>{experience.description}</p>
+                            <p className='experienceFrom experiencePreview'>{experience.from}</p>
+                            <p className='experienceTo experiencePreview'>{experience.to}</p>
                         </div>
                     )
                 })

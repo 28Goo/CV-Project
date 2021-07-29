@@ -52,7 +52,6 @@ export default class Main extends Component {
                 [id]: value,
             }
         });
-        console.log(this.state);
     }
 
     // EDUCATION METHODS
@@ -69,7 +68,6 @@ export default class Main extends Component {
                 ...education
             ]
         });
-        console.log(this.state.educationalBackground);
     }
 
     addEducation() {
@@ -110,7 +108,6 @@ export default class Main extends Component {
                 ...experience
             ]
         });
-        console.log(this.state.practicalExperience);
     }
 
     addExperience() {
@@ -137,7 +134,7 @@ export default class Main extends Component {
             ]
         });
     }
-
+    // Generate PDF
     printCV() {
         window.print();
     }

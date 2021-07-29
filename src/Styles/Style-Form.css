@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --Header-Color: #FF5C5C;
+    --Poppins: 'Poppins', sans-serif;
+    --Source-Sans: 'Source Sans', sans-serif;
+}
+
+.header {
+    background-color: var(--Header-Color);
+}
+
+.logo, .formTitle {
+    font-family: var(--Poppins);
+}
+
+label, input, button {
+    font-family: var(--Source-Sans);
+}
+
+
+
+@media screen and (min-width: 280px) {
+
+}
+
+@media screen and (min-width: 480px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+    
+}

@@ -11,8 +11,8 @@ export default function PracticalExperienceForm({ experience, getExperienceInput
                     <label htmlFor='company'>Company: </label>
                     <input type='text' id='company' data-key='company' onChange={getExperienceInput}/>
 
-                    <label htmlFor='description'>Description: </label>
-                    <input type='text' id='description' data-key='description' onChange={getExperienceInput}/>
+                    <label htmlFor='experienceDescription'>Description: </label>
+                    <input type='text' id='experienceDescription' data-key='description' onChange={getExperienceInput}/>
 
                     <label htmlFor='from'>From: </label>
                     <input type='text' id='experienceFrom' data-key='from' onChange={getExperienceInput}/>

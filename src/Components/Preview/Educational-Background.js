@@ -7,10 +7,11 @@ export default function EducationalBackground({ educationalBackground }) {
                 educationalBackground.map(info => {
                     return(
                         <div className='educations' key={info.id}>
-                        <h1>{info.course}</h1>
-                        <h1>{info.school}</h1>
-                        <h1>{info.from}</h1>
-                        <h1>{info.to}</h1>
+                            <h1 className='educationTitle'>Education</h1>
+                            <p className='course educationPreview'>{info.course}</p>
+                            <p className='school educationPreview'>{info.school}</p>
+                            <p className='educationFrom educationPreview'>{info.from}</p>
+                            <p className='educationTo educationPreview'>{info.to}</p>
                         </div>
                     );
                 })
