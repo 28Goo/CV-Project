@@ -27,6 +27,19 @@ label, input, button {
     background-color: #E4E4E4;
 }
 
+.footer {
+    display: grid;
+    place-content: center;
+    padding: 10px;
+    background-color: black
+}
+
+.footer a {
+    font-family: var(--Source-Sans);
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (min-width: 280px) {
     .header {
         padding: 8px;
