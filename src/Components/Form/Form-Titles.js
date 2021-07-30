@@ -5,11 +5,11 @@ function GeneralFormTitle() {
 }
 
 function EducationFormTitle() {
-    return(<h1 className='educationFormTitle formTitle'>Educational Background: </h1>)
+    return(<h1 className='educationFormTitle formTitle'>Education: </h1>)
 }
 
 function ExperienceFormTitle() {
-    return(<h1 className='experienceFormTitle formTitle'>Work Experience: </h1>)
+    return(<h1 className='experienceFormTitle formTitle'>Experience: </h1>)
 }
 
 export { GeneralFormTitle, EducationFormTitle, ExperienceFormTitle }

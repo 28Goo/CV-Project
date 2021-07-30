@@ -17,8 +17,10 @@ export default function EducationalBackgroundForm({ education, getEducationInput
                         <label htmlFor='educationTo'>To: </label>
                         <input type='text' id='educationTo' data-key='to' onChange={getEducationInput}/>
 
-                        <button onClick={addEducation}>Add</button>
-                        <button onClick={removeEducation}>Remove</button>
+                        <div className='buttonContainer' data-key={info.id}>
+                            <button className='add' onClick={addEducation}>Add</button>
+                            <button className='remove' onClick={removeEducation}>Remove</button>
+                        </div>
                     </div>
                 )
             })

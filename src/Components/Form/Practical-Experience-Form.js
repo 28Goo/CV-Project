@@ -20,8 +20,10 @@ export default function PracticalExperienceForm({ experience, getExperienceInput
                     <label htmlFor='to'>To: </label>
                     <input type='text' id='experienceTo' data-key='to' onChange={getExperienceInput}/>
                     
-                    <button onClick={addExperience}>Add</button>
-                    <button onClick={removeExperience}>Remove</button>
+                    <div className='buttonContainer' data-key={item.id}>
+                        <button className='add' onClick={addExperience}>Add</button>
+                        <button className='remove' onClick={removeExperience}>Remove</button>
+                    </div>
                 </div>
             )
         })
