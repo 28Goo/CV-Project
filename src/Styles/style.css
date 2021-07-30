@@ -116,12 +116,7 @@ label, input, button {
     }
 
     .main {
-        display: flex;
-    }
-
-    .forms, .preview {
-        width: 50%;
-        margin: 10px;
+        padding: 20px;
     }
 
     .formTitle {
@@ -134,9 +129,21 @@ label, input, button {
 
     .forms input {
         font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .add, .remove {
+        font-size: 1.2rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    
+    .main {
+        display: flex;
+    }
+
+    .forms, .preview {
+        width: 50%;
+        margin: 10px;
+    }
 }

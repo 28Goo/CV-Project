@@ -6,7 +6,7 @@ import Main from './Components/Main';
 import Footer from "./Components/Boilerplate/Footer";
 
 // Styling
-import './Styles/Style-Form.css'
+import './Styles/style.css'
 
 function App() {
   return (
