@@ -104,12 +104,36 @@ label, input, button {
 }
 
 @media screen and (min-width: 480px) {
+    .header {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        height: 70px;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+
     .main {
         display: flex;
     }
 
     .forms, .preview {
         width: 50%;
+        margin: 10px;
+    }
+
+    .formTitle {
+        font-size: 1.5rem;
+    }
+
+    .forms label {
+        font-size: 1.2rem;
+    }
+
+    .forms input {
+        font-size: 1.2rem;
     }
 }
 
