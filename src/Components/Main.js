@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import Form from './Form/Form';
 import Preview from './Preview/Preview';
-
 export default class Main extends Component {
     constructor(props) {
         super(props);
@@ -134,10 +133,6 @@ export default class Main extends Component {
             ]
         });
     }
-    // Generate PDF
-    printCV() {
-        window.print();
-    }
 
     render() {
         const { educationalBackground, practicalExperience } = this.state;
@@ -154,10 +149,7 @@ export default class Main extends Component {
                     addExperience={this.addExperience}
                     removeExperience={this.removeExperience}
                 />
-                <Preview
-                    details={this.state}
-                    printCV={this.printCV}
-                />
+                <Preview details={this.state} />
             </section>
         );
     }

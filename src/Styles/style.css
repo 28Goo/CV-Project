@@ -8,6 +8,7 @@
     --Header-Color: #FF5C5C;
     --Poppins: 'Poppins', sans-serif;
     --Source-Sans: 'Source Sans', sans-serif;
+    --Oswald: 'Oswald', sans-serif;
     --Form-Background: #E4E4E4;
 }
 
@@ -40,6 +41,44 @@ label, input, button {
     text-decoration: none;
 }
 
+.resumeHeader {
+    background-color: var(--Header-Color);
+}
+
+.firstName, .lastName {
+    font-family: var(--Oswald);
+}
+
+.profession {
+    font-family: var(--Poppins);
+}
+
+.previewTitle {
+    font-family: var(--Oswald);
+}
+
+.generalInformationBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bio p, .contact p, .educationPreview, .experiencePreview {
+    font-family: var(--Source-Sans);
+}
+
+.course, .school, .position, .company {
+    font-weight: 600;
+}
+
+.bio, .contact, .educations, .experiences {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 @media screen and (min-width: 280px) {
     .header {
         padding: 8px;
@@ -48,6 +87,8 @@ label, input, button {
     .main{
         padding: 15px;
     }
+
+    /* FORM */
 
     .forms {
         display: flex;
@@ -101,6 +142,17 @@ label, input, button {
         background-color: #FF5C5C;
     }
 
+    /* PREVIEW */
+
+    .preview {
+        margin-top: 20px;
+    }
+    .resumeHeader {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 @media screen and (min-width: 480px) {
@@ -129,7 +181,7 @@ label, input, button {
 
     .forms input {
         font-size: 1.2rem;
-        padding: 10px;
+        padding: 5px;
     }
 
     .add, .remove {
