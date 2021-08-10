@@ -7,8 +7,8 @@ export default function Preview({ details, key }) {
     return(
         <section className='preview'>
             <GeneralInformation genInfo={details.generalInformation} />
-            <EducationalBackground educationalBackground={details.educationalBackground} key={key} />
             <PracticalExperience practicalExperience={details.practicalExperience} key={key} />
+            <EducationalBackground educationalBackground={details.educationalBackground} key={key} />
         </section>
     );
 }

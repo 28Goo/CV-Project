@@ -13,19 +13,19 @@ export default function Form({
             <section className='forms'>
                 <GeneralFormTitle />
                 <GeneralInformationForm getGeneralInput={getGeneralInput} />
-                <EducationFormTitle />
-                <EducationalBackgroundForm 
-                    education={education}
-                    getEducationInput={getEducationInput}
-                    addEducation={addEducation}
-                    removeEducation={removeEducation}
-                />
                 <ExperienceFormTitle />
                 <PracticalExperienceForm
                     experience={experience}
                     getExperienceInput={getExperienceInput}
                     addExperience={addExperience}
                     removeExperience={removeExperience}
+                />
+                <EducationFormTitle />
+                <EducationalBackgroundForm 
+                    education={education}
+                    getEducationInput={getEducationInput}
+                    addEducation={addEducation}
+                    removeEducation={removeEducation}
                 />
             </section>
         )    

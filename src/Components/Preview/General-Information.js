@@ -5,10 +5,10 @@ export default function GeneralInformation({ genInfo }) {
     <div className='generalInformation'>
         <div className='resumeHeader'>
             <div className='nameContainer'>
-                <p className='firstName generalPreview'>{genInfo.firstName}</p>
-                <p className='lastName generalPreview'>{genInfo.lastName}</p>
+                <p className='firstName'>{genInfo.firstName}</p>
+                <p className='lastName'>{genInfo.lastName}</p>
             </div>
-            <p className='profession generalPreview'>{genInfo.profession}</p>
+            <p className='profession'>{genInfo.profession}</p>
         </div>
         <div className='generalInformationBottom'>
             <div className='bio'>

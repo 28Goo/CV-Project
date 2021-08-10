@@ -28,6 +28,18 @@ label, input, button {
     background-color: #E4E4E4;
 }
 
+#description {
+    height: 80px;
+}
+
+.generalForm, .practicalForm {
+    margin-bottom: 30px;
+}
+
+.preview {
+    width: 100%;
+}
+
 .footer {
     display: grid;
     place-content: center;
@@ -47,6 +59,7 @@ label, input, button {
 
 .firstName, .lastName {
     font-family: var(--Oswald);
+    font-weight: 500;
 }
 
 .profession {
@@ -55,6 +68,9 @@ label, input, button {
 
 .previewTitle {
     font-family: var(--Oswald);
+    font-weight: 500;
+    color: var(--Header-Color);
+    margin-bottom: 10px;
 }
 
 .generalInformationBottom {
@@ -64,19 +80,38 @@ label, input, button {
     justify-content: space-evenly;
 }
 
-.bio p, .contact p, .educationPreview, .experiencePreview {
+.bio p, .contact p, .educationDetails, .experienceDetails {
     font-family: var(--Source-Sans);
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .course, .school, .position, .company {
     font-weight: 600;
 }
 
-.bio, .contact, .educations, .experiences {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.educationalBackground, .practicalExperience {
     width: 100%;
+}
+
+.bio, .contact, .educationalBackground, .practicalExperience {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px
+}
+
+.educationDetails, .experienceDetails, .companyDetails, .experienceDate {
+    display: flex;
+}
+
+.experienceDetails {
+    flex-direction: column;
+}
+
+.educationPreview, .experiencePreview {
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 @media screen and (min-width: 280px) {
@@ -112,10 +147,7 @@ label, input, button {
         width: 100%;
         border-radius: 6px;
         border: 1px solid black;
-    }
-
-    .generalForm, .educationForm {
-        margin-bottom: 30px;
+        overflow: hidden;
     }
 
     .buttonContainer {
@@ -148,10 +180,22 @@ label, input, button {
         margin-top: 20px;
     }
     .resumeHeader {
-        height: 100px;
+        height: 130px;
         display: flex;
         align-items: center;
         justify-content: space-around;
+    }
+
+    .firstName, .lastName {
+        font-size: 1.5rem;
+    }
+
+    .previewTitle {
+        font-size: 1.2rem;
+    }
+
+    .generalPreview, .experiencePreview, .educationPreview {
+        font-size: .85rem;
     }
 }
 
@@ -169,6 +213,12 @@ label, input, button {
 
     .main {
         padding: 20px;
+        display: flex;
+    }
+
+    .forms, .preview {
+        width: 50%;
+        margin: 10px;
     }
 
     .formTitle {
@@ -190,12 +240,23 @@ label, input, button {
 }
 
 @media screen and (min-width: 1200px) {
-    .main {
-        display: flex;
+    .resumeHeader {
+        height: 160px;
     }
 
-    .forms, .preview {
-        width: 50%;
-        margin: 10px;
+    .firstName, .lastName {
+        font-size: 2rem;
+    }
+
+    .profession {
+        font-size: 1.2rem;
+    }
+
+    .previewTitle {
+        font-size: 1.6rem;
+    }
+
+    .generalPreview, .experiencePreview, .educationPreview {
+        font-size: 1rem;
     }
 }
